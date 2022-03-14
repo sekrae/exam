@@ -1,0 +1,16 @@
+<form method="POST" action=".">
+    {% csrf_token %}
+    <h2>Создание продукта</h2>
+        <input type="text" name="name">>
+        <input type="text" unique_number="unique_number">
+        <input type="text" initial_cost="initial_cost">
+        <input type="text" residual_value="residual_value">
+        <select name="categories">
+            {% for product in products %}
+            <option value="{{cat.id}}">{{cat.name}}</option>
+            {% endfor %}
+        </select>
+        <input type="text" style="height:200px;" name="text"></input>
+        <input type="date" name="publication_date">
+    <button type="submit">Создать</button>
+</form>

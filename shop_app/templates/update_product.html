@@ -1,0 +1,13 @@
+<form method="POST" action=".">
+    {% csrf_token %}
+    <h2>Обновление продукта</h2>
+        <input value="{{ single_product.name }}" type="text" name="name">
+        <input value="{{ product.unique_number }}"
+        <select name="category">
+            {% for cat in categories %}
+            <option value="{{cat.id}}">{{cat.name}}</option>
+            {% endfor %}
+        </select>
+        <input value="{{ single_news.text }}" type="text" style="height:200px;" name="text"></input>
+    <button type="submit">Создать</button>
+</form>
